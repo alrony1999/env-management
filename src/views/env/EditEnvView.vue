@@ -13,11 +13,8 @@ const store = useEnvStore();
 const envEditForm = ref<Env>({});
 
 onBeforeMount(() => {
-    const envFile = store.env.filter((item: Env) => item.id == route.params.id)
-    if (envFile.length > 0) {
-        envEditForm.value = envFile[0];
-    }
-
+    const id = Number(route.params.id)
+    envEditForm.value = store.getEnv(id);
 })
 
 function addNewKey() {

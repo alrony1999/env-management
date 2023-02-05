@@ -7,6 +7,10 @@ export const useEnvStore = defineStore(
   () => {
     const env = ref<Env[]>([]);
 
+    const getEnv = computed(() => {
+      return (id: number) => env.value.find((item: Env) => item.id === id);
+    });
+
     const updateEnv = (object: Env) => {
       env.value.forEach((item: Env, index: number) => {
         if (item.id == object.id) {
@@ -16,7 +20,8 @@ export const useEnvStore = defineStore(
         }
       });
     };
-    return { env, updateEnv };
+
+    return { env, updateEnv, getEnv };
   },
   {
     persist: true,
