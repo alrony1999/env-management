@@ -12,13 +12,11 @@ export const useEnvStore = defineStore(
     });
 
     const updateEnv = (object: Env) => {
-      env.value.forEach((item: Env, index: number) => {
-        if (item.id == object.id) {
-          console.log("old", env.value[index]); ///old
-          env.value[index] = object;
-          console.log("new", object); //new
-        }
-      });
+      const index = env.value.findIndex((item: Env) => item.id === object.id);
+
+      console.log("old", env.value[index]); ///old
+      env.value[index] = object;
+      console.log("new", object); //new
     };
 
     return { env, updateEnv, getEnv };
