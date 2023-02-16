@@ -75,7 +75,7 @@ function deleteKey(id: number) {
                 <label class="block text-gray-700 text-sm font-bold mb-2 ml-32" for="envname">
                     Env Name
                 </label>
-                <input v-model="envEditForm.name"
+                <input v-model="store.env[0].name"
                     class=" inline-block w-1/2 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="envname" type="text" placeholder="Env Name">
             </div>

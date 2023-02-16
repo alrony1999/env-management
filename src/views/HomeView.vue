@@ -68,7 +68,7 @@ function envFileDelete(id: number) {
   </div>
 
   <div>
-    <button @click="showAddEnvModal = true" class="px-5 py-2 bg-purple-900 border rounded text-black">Add New Env
+    <button @click="showAddEnvModal = true" class="px-5 py-2 bg-orange-600 border rounded text-black">Add New Env
       File</button>
   </div>
   <Modal :visible="showAddEnvModal" @close="showAddEnvModal = false">
